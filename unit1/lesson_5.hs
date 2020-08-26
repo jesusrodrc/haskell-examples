@@ -18,6 +18,19 @@ genHostRequestBuilder host = (\apiKey resource id ->
 genApiRequestBuilder hostBuilder apiKey = (\resource id ->
                                             hostBuilder apiKey resource id)
 
-genResourceRequestBuilder apiRequestBuilder resource = (\id ->
-                                                        apiRequestBuilder resource id)
+genApiRequestBuilder hostBuilder apiKey resource = (\id ->
+                                                        hostBuilder apiKey resource id)
 
+-- 5.1 
+inc n = n + 1
+double n = n*2
+square n = n^2
+
+
+ifEvenInc x = ifEven inc
+ifEvenDouble x = ifEven double
+ifEvenSquare x = ifEven square
+
+-- 5.2
+
+binaryPartialApplication f x = (\x -> f x)
